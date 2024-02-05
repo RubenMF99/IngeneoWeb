@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/Auth/LoginPage'
 import RegisterPage from './pages/Auth/RegisterPage'
@@ -12,7 +12,7 @@ function App() {
   const isAllowed = useAuthStore((state) => state.isAuth)
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="flex h-screen">
         <Routes>
           <Route path="/login" Component={LoginPage} />
@@ -27,7 +27,7 @@ function App() {
           </Route>
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
