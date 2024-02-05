@@ -50,12 +50,8 @@ const Shippings = () => {
           <div className="fixed top-0 left-0 w-full h-full bg-gray-500 bg-opacity-50 flex justify-center items-center">
             <div className="bg-white p-4 rounded-md">
               <div className="overflow-y-auto max-h-96">
-                {modal.modal === 'add' && (
-                  <AddShippingModal setModal={setModal} />
-                )}
-                {modal.modal === 'delete' && (
-                  <DeleteShippingModal setModal={setModal} />
-                )}
+                {modal.modal === 'add' && <AddShippingModal />}
+                {modal.modal === 'delete' && <DeleteShippingModal />}
                 {modal.modal === 'view' && <ViewShippingModal />}
               </div>
               <button

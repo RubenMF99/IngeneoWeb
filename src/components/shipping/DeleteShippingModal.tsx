@@ -1,6 +1,4 @@
-import { ModalProps } from '../../types/types'
-
-const DeleteShippingModal = ({ setModal }: ModalProps) => {
+const DeleteShippingModal = () => {
   return <div>DeleteShippingModal</div>
 }
 export default DeleteShippingModal

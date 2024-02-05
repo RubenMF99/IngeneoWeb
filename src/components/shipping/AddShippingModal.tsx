@@ -1,6 +1,4 @@
-import { ModalProps } from '../../types/types'
-
-const AddShippingModal = ({ setModal }: ModalProps) => {
+const AddShippingModal = () => {
   return (
     <div>
       <p>Agregar pedido</p>
