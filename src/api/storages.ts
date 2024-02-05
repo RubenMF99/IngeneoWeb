@@ -6,7 +6,7 @@ export const newStorage = async (
   ubicacion: string,
   idCliente: number
 ) => {
-  return axios.post('/almacenaje', {
+  return axios.post('/admin/almacenaje', {
     nombre,
     tipo,
     ubicacion,
@@ -15,13 +15,13 @@ export const newStorage = async (
 }
 
 export const getStorages = async () => {
-  return axios.get('/almacenaje')
+  return axios.get('/admin/almacenaje')
 }
 
 export const getStorage = async (id: string) => {
-  return axios.get(`/almacenaje/${id}`)
+  return axios.get(`/admin/almacenaje/${id}`)
 }
 
 export const deleteStorage = async (id: number) => {
-  return axios.delete(`/almacenaje/${id}`)
+  return axios.delete(`/admin/almacenaje/${id}`)
 }
