@@ -1,7 +1,7 @@
 import axios from '../libs/axios'
 
 export const login = async (email: string, password: string) => {
-  return axios.post(email, password)
+  return axios.post('/login', { email, password })
 }
 
 export const register = async (
