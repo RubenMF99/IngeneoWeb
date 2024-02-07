@@ -3,6 +3,7 @@ import { ProtectedRouteProps } from '../types/types'
 import { useEffect } from 'react'
 import { useAuthStore } from '../store/auth'
 import { getProfile } from '../api/auth'
+import { AxiosError } from 'axios'
 
 export const ProtectedRoute = ({
   children,
@@ -19,8 +20,12 @@ export const ProtectedRoute = ({
         setUserProfile({
           _id: response.data._id,
         })
-      } catch (err) {
-        navigate('/login')
+      } catch (err: unknown) {
+        if (err instanceof AxiosError)
+          if (err.response?.status === 401) {
+            navigate('/login')
+          }
+        console.error(err)
       }
     }
 
